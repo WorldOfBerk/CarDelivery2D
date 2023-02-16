@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float steerSpeed;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float steerAmount;
+    [SerializeField] private float moveAmount;
+    
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
+        transform.Rotate(0 , 0 , -steerAmount);
+        moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.Translate(0, moveAmount, 0);
     }
 }
