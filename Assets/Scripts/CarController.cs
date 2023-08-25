@@ -9,13 +9,6 @@ public class CarController : MonoBehaviour
     [SerializeField] private float steerAmount;
     [SerializeField] private float moveAmount;
     
-    
-    void Start()
-    {
-        
-    }
-
-    
     void Update()
     {
         steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
