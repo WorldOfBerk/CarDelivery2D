@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Delivery : MonoBehaviour
 {
-    
     [Header("Color")] 
     [SerializeField] private Color32 hasPackageColor = new Color32(1, 1, 1, 1);
     [SerializeField] private Color32 noPackageColor = new Color32(1, 1, 1, 1);
@@ -41,6 +40,8 @@ public class Delivery : MonoBehaviour
             hasPackage = false;
             
             spriteRenderer.color = noPackageColor;
+            
+            GameManager.Instance.IncrementScore(1);
         }
     }
 }
